@@ -9,3 +9,5 @@ jobs:
       uses: TelltaleGames/notify-action@main
       with:
         notifications: ${{ secrets.BUILD_NOTIFICATIONS_DATA }}
+      env:
+        BUILD_STATUS: Build (${{ github.run_id }}) of ${{ github.repository }} ${{ job.status }}
