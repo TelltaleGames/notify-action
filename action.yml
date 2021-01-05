@@ -1,0 +1,9 @@
+name: 'Notify'
+description: 'Notification of action completion.'
+inputs:
+  notifications:
+    description: 'notification data'
+    required: true
+runs:
+  using: 'node12'
+  main: 'build/index.js'

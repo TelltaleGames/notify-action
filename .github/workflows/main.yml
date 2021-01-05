@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+  notifications:
+    runs-on: ubuntu-latest
+    name: Notification Test
+    steps:
+    - name: notifications action step
+      uses: TelltaleGames/notify-action@main
+      with:
+        notifications: ${{ secrets.BUILD_NOTIFICATIONS_DATA }}

@@ -1,0 +1,29 @@
+{
+  "name": "notify-action",
+  "version": "1.0.0",
+  "description": "Github notification action",
+  "main": "main.js",
+  "scripts": {
+    "run": "node src/main.js",
+    "build": "ncc build src/main.js -o build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TelltaleGames/notify-action.git"
+  },
+  "author": "Telltale Games",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TelltaleGames/notify-action/issues"
+  },
+  "homepage": "https://github.com/TelltaleGames/notify-action#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.26.1",
+    "mustache": "^4.1.0",
+    "node-fetch": "^2.6.1",
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
+}
