@@ -3,10 +3,11 @@ const github = require('@actions/github');
 const fetch = require('node-fetch');
 const mustache = require('mustache');
 
+// Disable Mustache escaping.
+mustache.escape = function(text) {return text;};
+
 // Environment seems to be where everything useful is passed in, perhaps process everything starting with INPUT_?
 const notification_data = process.env;
-
-console.dir(notification_data);
 
 notification_data.BUILD_URL = `${notification_data.GITHUB_SERVER_URL}/${notification_data.GITHUB_REPOSITORY}/${notification_data.GITHUB_RUN_NUMBER}`;
 
