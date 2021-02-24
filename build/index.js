@@ -6559,6 +6559,10 @@ const mustache = __webpack_require__(272);
 // Environment seems to be where everything useful is passed in, perhaps process everything starting with INPUT_?
 const notification_data = process.env;
 
+console.dir(notification_data);
+
+notification_data.BUILD_URL = `${notification_data.GITHUB_SERVER_URL}/${notification_data.GITHUB_REPOSITORY}/${notification_data.GITHUB_RUN_NUMBER}`;
+
 async function notify(notification) {
     try {
         const method = notification.method || 'POST';

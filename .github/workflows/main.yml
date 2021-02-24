@@ -10,4 +10,4 @@ jobs:
       with:
         notifications: ${{ secrets.BUILD_NOTIFICATIONS_DATA }}
       env:
-        BUILD_STATUS: Build (${{ github.run_id }}) of ${{ github.repository }} ${{ job.status }}
+        BUILD_STATUS: "Build ${{ job.status }}: ${{ github.repository }} (${{ github.run_number }})"
