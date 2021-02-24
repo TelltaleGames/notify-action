@@ -9,7 +9,7 @@ mustache.escape = function(text) {return text;};
 // Environment seems to be where everything useful is passed in, perhaps process everything starting with INPUT_?
 const notification_data = process.env;
 
-notification_data.BUILD_URL = `${notification_data.GITHUB_SERVER_URL}/${notification_data.GITHUB_REPOSITORY}/${notification_data.GITHUB_RUN_NUMBER}`;
+notification_data.BUILD_URL = `${notification_data.GITHUB_SERVER_URL}/${notification_data.GITHUB_REPOSITORY}/actions/runs/${notification_data.GITHUB_RUN_ID}`;
 
 async function notify(notification) {
     try {
