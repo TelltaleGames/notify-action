@@ -1,3 +1,5 @@
+// Copyright (c) 2021 Telltale Games. All rights reserved.
+// See LICENSE for usage, modification, and distribution terms.
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fetch = require('node-fetch');
