@@ -17,13 +17,11 @@
     "url": "https://github.com/TelltaleGames/notify-action/issues"
   },
   "homepage": "https://github.com/TelltaleGames/notify-action#readme",
-  "dependencies": {
-  },
   "devDependencies": {
-    "@vercel/ncc": "^0.26.1",
-    "mustache": "^4.1.0",
-    "node-fetch": "^2.6.1",
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0"
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.1",
+    "@vercel/ncc": "^0.38.3",
+    "mustache": "^4.2.0",
+    "node-fetch": "^3.3.2"
   }
 }
