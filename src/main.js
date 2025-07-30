@@ -17,6 +17,12 @@ async function notify(notification) {
     try {
         const method = notification.method || 'POST';
         const headers = notification.headers || { 'Content-Type': 'application/json' }
+        const filters = notification.filters || [];
+        // TODO: Support filters tags from the workflow.
+        if(notification.filters.length > 0) {
+            // If we have any filters, skip this notification
+            return;
+        }
         const response = await fetch(notification.url, {
             method: method,
             body: mustache.render(notification.body, notification_data),
