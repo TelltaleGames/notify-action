@@ -37482,15 +37482,10 @@ const File = _File
 
 // EXPORTS
 __nccwpck_require__.d(__webpack_exports__, {
-  YQ: () => (/* reexport */ fetch_blob/* default */.A),
-  ZH: () => (/* reexport */ file/* default */.A),
-  k4: () => (/* binding */ blobFrom),
-  F8: () => (/* binding */ blobFromSync),
-  NX: () => (/* binding */ fileFrom),
-  _M: () => (/* binding */ fileFromSync)
+  ZH: () => (/* reexport */ file/* default */.A)
 });
 
-// UNUSED EXPORTS: default
+// UNUSED EXPORTS: Blob, blobFrom, blobFromSync, default, fileFrom, fileFromSync
 
 ;// CONCATENATED MODULE: external "node:fs"
 const external_node_fs_namespaceObject = require("node:fs");
@@ -37516,7 +37511,7 @@ const { stat } = external_node_fs_namespaceObject.promises
  * @param {string} path filepath on the disk
  * @param {string} [type] mimetype to use
  */
-const blobFromSync = (path, type) => fromBlob((0,external_node_fs_namespaceObject.statSync)(path), path, type)
+const blobFromSync = (path, type) => fromBlob(statSync(path), path, type)
 
 /**
  * @param {string} path filepath on the disk
@@ -37536,10 +37531,10 @@ const fileFrom = (path, type) => stat(path).then(stat => fromFile(stat, path, ty
  * @param {string} path filepath on the disk
  * @param {string} [type] mimetype to use
  */
-const fileFromSync = (path, type) => fromFile((0,external_node_fs_namespaceObject.statSync)(path), path, type)
+const fileFromSync = (path, type) => fromFile(statSync(path), path, type)
 
 // @ts-ignore
-const fromBlob = (stat, path, type = '') => new fetch_blob/* default */.A([new BlobDataItem({
+const fromBlob = (stat, path, type = '') => new Blob([new BlobDataItem({
   path,
   size: stat.size,
   lastModified: stat.mtimeMs,
@@ -37547,12 +37542,12 @@ const fromBlob = (stat, path, type = '') => new fetch_blob/* default */.A([new B
 })], { type })
 
 // @ts-ignore
-const fromFile = (stat, path, type = '') => new file/* default */.A([new BlobDataItem({
+const fromFile = (stat, path, type = '') => new File([new BlobDataItem({
   path,
   size: stat.size,
   lastModified: stat.mtimeMs,
   start: 0
-})], (0,external_node_path_namespaceObject.basename)(path), { type, lastModified: stat.mtimeMs })
+})], basename(path), { type, lastModified: stat.mtimeMs })
 
 /**
  * This is a blob backed up by a file on the disk
@@ -37929,26 +37924,13 @@ return new B(c,{type:"multipart/form-data; boundary="+b})}
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 "use strict";
-// ESM COMPAT FLAG
-__nccwpck_require__.r(__webpack_exports__);
 
 // EXPORTS
 __nccwpck_require__.d(__webpack_exports__, {
-  AbortError: () => (/* reexport */ AbortError),
-  Blob: () => (/* reexport */ from/* Blob */.YQ),
-  FetchError: () => (/* reexport */ FetchError),
-  File: () => (/* reexport */ from/* File */.ZH),
-  FormData: () => (/* reexport */ esm_min/* FormData */.fS),
-  Headers: () => (/* reexport */ Headers),
-  Request: () => (/* reexport */ Request),
-  Response: () => (/* reexport */ Response),
-  blobFrom: () => (/* reexport */ from/* blobFrom */.k4),
-  blobFromSync: () => (/* reexport */ from/* blobFromSync */.F8),
-  "default": () => (/* binding */ fetch),
-  fileFrom: () => (/* reexport */ from/* fileFrom */.NX),
-  fileFromSync: () => (/* reexport */ from/* fileFromSync */._M),
-  isRedirect: () => (/* reexport */ isRedirect)
+  Ay: () => (/* binding */ fetch)
 });
+
+// UNUSED EXPORTS: AbortError, Blob, FetchError, File, FormData, Headers, Request, Response, blobFrom, blobFromSync, fileFrom, fileFromSync, isRedirect
 
 ;// CONCATENATED MODULE: external "node:http"
 const external_node_http_namespaceObject = require("node:http");
@@ -40173,17 +40155,6 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 /******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__nccwpck_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
@@ -40236,7 +40207,7 @@ var __webpack_exports__ = {};
 // See LICENSE for usage, modification, and distribution terms.
 const core = __nccwpck_require__(7484);
 const github = __nccwpck_require__(3228);
-const fetch = __nccwpck_require__(4034);
+const fetch = (__nccwpck_require__(4034)/* ["default"] */ .Ay);
 const mustache = __nccwpck_require__(2374);
 
 // Disable Mustache escaping.

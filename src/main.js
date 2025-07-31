@@ -2,7 +2,7 @@
 // See LICENSE for usage, modification, and distribution terms.
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch').default;
 const mustache = require('mustache');
 
 // Disable Mustache escaping.
