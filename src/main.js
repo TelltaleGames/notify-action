@@ -19,7 +19,7 @@ async function notify(notification) {
         const headers = notification.headers || { 'Content-Type': 'application/json' }
         const filters = notification.filters || [];
         // TODO: Support filters tags from the workflow.
-        if(notification.filters.length > 0) {
+        if(filters.length > 0) {
             // If we have any filters, skip this notification
             return;
         }
